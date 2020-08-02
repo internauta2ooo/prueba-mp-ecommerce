@@ -68,7 +68,7 @@ class controladorpago
 
         var_dump("Retornameros la respuesta");
         var_dump($preference->email);
-        var_dump($preference);
+        // var_dump($preference);
         return $checkout;
     }
 }
