@@ -557,7 +557,7 @@
                                             <?php echo "$" . $_POST['unit'] ?>
                                         </h3>
                                     </div>
-                                    <form action="/procesar-pago" method="POST">
+                                    <form action="/procesarpago.php" method="POST">
                                             <script src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js" data-preference-id="<?php echo $respuesta; ?>">
                                             </script>
                                         </form>
