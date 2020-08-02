@@ -16,12 +16,15 @@ class controladorpago
             "excluded_payment_methods" => array(
                 array("id" => "amex")
             ),
+            "excluded_payment_types" => array(
+                array("id" => "atm")
+            ),
             "installments" => 6
         );
 
         $payer = new MercadoPago\Payer();
         $payer->name = "Lalo";
-        $payer->surname = "Lancda";
+        $payer->surname = "Landa";
         $payer->email = "test_user_58295862@testuser.com";
         $payer->date_created = "2018-06-02T12:58:41.425-04:00";
         $payer->phone = array(
@@ -56,7 +59,7 @@ class controladorpago
         $preference->email = "gentlelif3@outlook.com";
         $preference->external_reference = "gentlelif3@outlook.com";
         $preference->save();
-
+        $preference->payer = $payer;
 
 
         $checkout = $preference->id;
@@ -64,6 +67,7 @@ class controladorpago
 
         var_dump("Retornameros la respuesta");
         var_dump($preference->email);
+        // var_dump($preference);
         return $checkout;
     }
 }
