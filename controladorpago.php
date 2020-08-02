@@ -58,8 +58,9 @@ class controladorpago
         $preference->auto_return = "approved";
         $preference->email = "gentlelif3@outlook.com";
         $preference->external_reference = "gentlelif3@outlook.com";
-        $preference->save();
         $preference->payer = $payer;
+        $preference->save();
+        
 
 
         $checkout = $preference->id;
