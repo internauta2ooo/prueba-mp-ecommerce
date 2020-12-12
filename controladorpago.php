@@ -2,10 +2,8 @@
 
 class controladorpago
 {
-
     public function procesarPago($title, $quantity, $unit_price, $img)
     {
-
         require __DIR__ .  '/vendor/autoload.php';
         // Agrega credenciales
         MercadoPago\SDK::setAccessToken('APP_USR-1159009372558727-072921-8d0b9980c7494985a5abd19fbe921a3d-617633181');
@@ -59,16 +57,12 @@ class controladorpago
         $preference->email = "gentlelif3@outlook.com";
         $preference->external_reference = "gentlelif3@outlook.com";
         $preference->payer = $payer;
-        $preference->save();
-        
+        $preference->save();     
 
+        $checkout = $preference->id;      
 
-        $checkout = $preference->id;
-        // var_dump($preference->back_urls);
-
-        var_dump("Retornameros la respuesta");
+        var_dump("Retornamos la respuesta...");
         var_dump($preference->email);
-        // var_dump($preference);
         return $checkout;
     }
 }
